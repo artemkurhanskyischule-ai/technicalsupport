@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="de">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Discord Support System</title>
+<title>Support-System</title>
 
 <style>
 
@@ -155,11 +155,11 @@ button{
         <div>
 
             <div class="title">
-                Техническая поддержка
+                Technischer Support
             </div>
 
             <div class="subtitle">
-                Заполните форму для создания обращения
+                Füllen Sie das Formular aus, um ein Ticket zu erstellen
             </div>
 
         </div>
@@ -169,36 +169,36 @@ button{
     <div class="form">
 
         <div class="input-group">
-            <label>Имя пользователя</label>
+            <label>Benutzername</label>
 
             <input
                 type="text"
                 id="username"
-                placeholder="Введите имя">
+                placeholder="Name eingeben">
         </div>
 
         <div class="input-group">
-            <label>Контакт для связи (Discord / Telegram)</label>
+            <label>Kontakt für Rückmeldung (Discord / Telegram)</label>
 
             <input
                 type="text"
                 id="contact"
-                placeholder="@username">
+                placeholder="@benutzername">
         </div>
 
         <div class="input-group">
-            <label>Описание проблемы</label>
+            <label>Problembeschreibung</label>
 
             <textarea
                 id="problem"
-                placeholder="Опишите проблему"></textarea>
+                placeholder="Beschreiben Sie Ihr Problem"></textarea>
         </div>
 
         <button
             class="primary"
             onclick="createTicket()">
 
-            Создать обращение
+            Ticket erstellen
 
         </button>
 
@@ -207,11 +207,11 @@ button{
     <div class="ticket" id="ticketBox">
 
         <h3>
-            ✅ Обращение создано
+            ✅ Ticket erstellt
         </h3>
 
         <p>
-            Ваша заявка успешно отправлена тех.поддержке.
+            Ihre Anfrage wurde erfolgreich an den Support gesendet.
         </p>
 
         <div class="ticket-id" id="ticketId">
@@ -221,7 +221,7 @@ button{
             class="close-btn"
             onclick="closeTicket()">
 
-            Закрыть обращение
+            Ticket schließen
 
         </button>
 
@@ -248,7 +248,7 @@ async function createTicket(){
         document.getElementById("problem").value;
 
     if(!username || !contact || !problem){
-        alert("Заполните все поля");
+        alert("Bitte füllen Sie alle Felder aus");
         return;
     }
 
@@ -264,28 +264,28 @@ async function createTicket(){
             username:"Support Bot",
             embeds:[
                 {
-                    title:"📩 Новое обращение",
+                    title:"📩 Neues Ticket",
                     color:5867768,
                     fields:[
                         {
-                            name:"🎫 Номер тикета",
+                            name:"🎫 Ticketnummer",
                             value:"#"+currentTicketId
                         },
                         {
-                            name:"👤 Пользователь",
+                            name:"👤 Benutzer",
                             value:username
                         },
                         {
-                            name:"📞 Контакт",
+                            name:"📞 Kontakt",
                             value:contact
                         },
                         {
-                            name:"📝 Проблема",
+                            name:"📝 Problem",
                             value:problem
                         }
                     ],
                     footer:{
-                        text:"Discord Support System"
+                        text:"Support-System"
                     },
                     timestamp:new Date()
                 }
@@ -296,7 +296,7 @@ async function createTicket(){
     document.getElementById("ticketBox").style.display = "block";
 
     document.getElementById("ticketId").innerText =
-        "Номер обращения: #" + currentTicketId;
+        "Ticketnummer: #" + currentTicketId;
 }
 
 async function closeTicket(){
@@ -310,17 +310,17 @@ async function closeTicket(){
             username:"Support Bot",
             embeds:[
                 {
-                    title:"❌ Обращение закрыто",
-                    description:"Пользователь закрыл обращение.",
+                    title:"❌ Ticket geschlossen",
+                    description:"Der Benutzer hat das Ticket geschlossen.",
                     color:15158332,
                     fields:[
                         {
-                            name:"🎫 Номер тикета",
+                            name:"🎫 Ticketnummer",
                             value:"#"+currentTicketId
                         }
                     ],
                     footer:{
-                        text:"Discord Support System"
+                        text:"Support-System"
                     },
                     timestamp:new Date()
                 }
