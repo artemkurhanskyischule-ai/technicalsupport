@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Support System</title>
+<title>Technical Support</title>
 
 <style>
 
@@ -253,7 +253,7 @@ button{
 
 <script>
 
-const webhookURL = "YOUR_WEBHOOK_HERE";
+const webhookURL = "https://discord.com/api/webhooks/1503900719684784198/gb6_N8DrwRvCkBXmZpIBED2f3JlyTvdx9m34fRSSxrDOTxat8Mb8w2Py031Uej7_NJ9n";
 
 let lang = "ru";
 let currentTicketId = null;
@@ -261,11 +261,11 @@ let currentTicketId = null;
 const texts = {
 
 ru:{
-    lang:"Язык",
+    lang:"Language",
     title:"Техническая поддержка",
     subtitle:"Создайте обращение через форму",
     user:"Имя пользователя",
-    contact:"Контакт (Discord / Telegram)",
+    contact:"Контакт (Discord / Telegram/Email)",
     problem:"Описание проблемы",
     create:"Создать обращение",
     ticketCreated:"Обращение создано",
@@ -282,7 +282,7 @@ ru:{
 },
 
 de:{
-    lang:"Sprache",
+    lang:"Language",
     title:"Technischer Support",
     subtitle:"Erstellen Sie ein Ticket",
     user:"Benutzername",
@@ -294,9 +294,9 @@ de:{
     close:"Ticket schließen",
     alert:"Bitte alle Felder ausfüllen",
     embedTitle:"📩 Neues Ticket",
-    embedUser:"Benutzer",
-    embedContact:"Kontakt",
-    embedProblem:"Problem",
+    embedUser:"Benutzer name",
+    embedContact:"Kontakt (Discord/Telegram/Email)",
+    embedProblem:"Ihre Problem",
     embedTicket:"Ticketnummer",
     closedTitle:"❌ Ticket geschlossen",
     closedText:"Der Benutzer hat das Ticket geschlossen."
